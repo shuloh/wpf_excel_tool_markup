@@ -1,0 +1,42 @@
+﻿<Window x:Class="ExcelAppWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExcelAppWPF"
+        mc:Ignorable="d"
+        Title="Excel App To Markup Changes with Highlighted Cells" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Grid.Column="0"  Name="BtnReferenceFile" Click="btnLoadReferenceFile" Content="Load Reference File"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Name="ReferenceFile" VerticalAlignment="Top" AcceptsReturn="True" IsReadOnly="True" HorizontalAlignment="Stretch"
+        AllowDrop="True" PreviewDragOver="ReferenceFile_PreviewDragOver" Drop="ReferenceFile_Drop" />
+
+        <Button Grid.Row="1" Grid.Column="0"  Name="BtnFileToCheck" Click="btnLoadFileToCheck" Content="Load File To Check"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="FileToCheck" VerticalAlignment="Top" AcceptsReturn="True" IsReadOnly="True" HorizontalAlignment="Stretch"
+        AllowDrop="True" PreviewDragOver="FileToCheck_PreviewDragOver" Drop="FileToCheck_Drop" />
+
+        <Button Grid.Row="2" Grid.Column="0"  Name="BtnRunProgram" Click="runProgram" Content="Run Program" IsEnabled="False"/>
+
+        <TextBox Grid.Row ="2" Grid.Column="1" Grid.RowSpan="2" Name="Result" 
+                     VerticalAlignment="Stretch" 
+                     AcceptsReturn="True" 
+                     IsReadOnly="True" 
+                     HorizontalAlignment="Stretch"
+                     VerticalScrollBarVisibility="Visible"
+                     TextWrapping="Wrap"/>
+        <Button Grid.Row="4" Grid.Column="0"  Name="BtnSaveFile" Click="saveFile" Content="Save New File With Markup" IsEnabled="False"/>
+
+    </Grid>
+
+</Window>
